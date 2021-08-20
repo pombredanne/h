@@ -2,7 +2,7 @@ from unittest.mock import patch, sentinel
 
 import pytest
 
-from h.auth.policy.combined import SecurityPolicy
+from h.security.policy import SecurityPolicy
 
 # pylint: disable=protected-access
 

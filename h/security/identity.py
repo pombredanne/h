@@ -1,7 +1,5 @@
 from dataclasses import dataclass
 
-from pyramid.interfaces import IAuthenticationPolicy
-
 from h.models import AuthClient, User
 
 

@@ -2,8 +2,12 @@ from h.security import Identity
 from h.streamer import streamer, views
 
 
-def test_websocket_view_adds_auth_state_to_environ(pyramid_request):
-    pyramid_request.identity = Identity()
+def test_websocket_view_adds_auth_state_to_environ(pyramid_request, pyramid_config):
+    # Pre Pyramid 2.0
+    # pyramid_request.identity = Identity()
+    # Post Pyramid 2.0
+    pyramid_config.testing_securitypolicy(identity=Identity())
+
     pyramid_request.get_response = lambda _: None
 
     views.websocket_view(pyramid_request)
